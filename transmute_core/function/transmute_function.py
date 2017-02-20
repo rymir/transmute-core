@@ -108,7 +108,7 @@ class TransmuteFunction(object):
             responses[str(code)] = Response({
                 "description": details.get("description"),
                 "schema": context.response_shape.swagger(
-                    context.serializers.to_json_schema(details["type"])
+                    context.serializers.to_json_schema(details.get("type"))
                 )
             })
         return Operation({
